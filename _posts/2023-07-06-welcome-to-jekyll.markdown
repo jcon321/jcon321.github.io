@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  "How I Made This Blog"
+title:  "How I Created This Blog Using GitHub Pages & Jekyll"
 date:   2023-07-06 22:11:30 -0400
 ---
 
-TODO... That is why I decided to create this blog using GitHub Pages & Jekyll.
-
-GitHub Pages' support for Jekyll has been around for a while, for good reason, as it allows for one of the simplest and quickest ways to set up a static website or blog. However, because of its maturity and longevity, finding up to date resources may be a little challenging as the web can contain outdated information on these topics. Skip to TODO for editing directly on github
+GitHub Pages' support for Jekyll has been around for a while, for good reason, as it allows for one of the simplest and quickest ways to set up a static website or blog. The seamless integration with GitHub, complimentary hosting, custom domain support, simplicity of Jekyll, and the ease of content creation with Markdown has made the process of creating and maintaining this blog a breeze. By leveraging GitHub's editor and direct commit functionality, you can conveniently manage your Jekyll blog directly on the GitHub platform itself. However, I decided to setup a local environment with Jekyll to understand the entire stack, which is documented below.
 
 ## Environment
 - Windows Subsystem for Linux (WSL2) with Ubuntu. Installing WSL2 is effortless these days, just open a windows command prompt and issue `wsl --install`. This will install all the WSL2 components and Ubuntu Linux distro. [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install){:target="_blank"}
