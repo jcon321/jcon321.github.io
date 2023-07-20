@@ -1,7 +1,16 @@
+.site-title, .site-title:visited {
+    color: #79B8FF;
+    font-weight: 300;
+}
+
 .wrapper {
     max-width: 55%;
 }
 
 .home p:first-of-type {
     margin-bottom: 50px;
+}
+
+a, a:visited {
+    color: #FFC079;
 }
