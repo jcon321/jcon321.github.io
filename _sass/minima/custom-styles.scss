@@ -14,3 +14,10 @@
 a, a:visited {
     color: #FFC079;
 }
+
+.footer-col-wrapper .footer-col:first-of-type p {
+    float: left;
+}
+.footer-col-wrapper .footer-col:last-of-type p {
+    float: right;
+}
