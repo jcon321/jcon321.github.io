@@ -4,11 +4,11 @@ title:  "GitLab CI/CD & Docker"
 date:   2023-07-25 20:19:55 -0400
 ---
 
-GitLab is a great alternative to GitHub, especially if your prefer to host yourself. GitLab comes with an easy to use, but powerful CI/CD pipeline process. We'll use it to fetch, build, and deploy a docker container via GitLab Runner.
+GitLab is a great alternative to GitHub, especially if your prefer to host yourself. GitLab comes with an easy to use, but powerful CI/CD pipeline process. We'll use it to fetch, build, and deploy a Docker container via GitLab Runner.
 
 
 ## Environment
-- Ubuntu Server OS, within VirtualBox. GitLab is a behemoth, so we'll test out its capabilities on a local virtual machine. Current settings are 4 CPU(s) amd 8GB of memory.
+- Ubuntu 20.04 Server OS, within VirtualBox. GitLab is a behemoth, so we'll test out its capabilities on a local virtual machine. Current settings are 4 CPU(s), 8GB of memory, and 20GB of space.
 
 
 ## GitLab Installation
@@ -38,3 +38,30 @@ GitLab's official documentation is a great source for information. [Install self
 
 
   ## Docker Installation
+  Install Docker through the official Docker repository. [DigitalOcean - Installing Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04#step-1-installing-docker){:target="_blank"}
+  - `sudo apt install apt-transport-https software-properties-common`
+  - `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+  - `sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"`
+  - `apt-cache policy docker-ce`
+  - `sudo apt install docker-ce`
+  - `sudo systemctl status docker`
+  - `sudo docker --version`
+  - To run docker as non-root user, we can add the current user to the `docker` group. Check this out for why you may or may not want to do that. [Docker Post-Install](https://docs.docker.com/engine/install/linux-postinstall/){:target="_blank"}
+  - `sudo usermod -aG docker $USER`
+  - Log out and in to reset permissions
+  - `docker --version`
+
+  At this point we should now have Docker running. Next we'll download a demo Spring Boot project and setup a local build environment.
+
+
+  ## Spring Boot with Docker
+  [Spring Initializer](https://spring.io/guides/topicals/spring-boot-docker/){:target="_blank"} comes with a command line interface we can use to download project templates or custom configuration. Check out `curl https://start.spring.io` to see all the options. We'll download the Web Project in Java 17 demo.
+  - `curl -G https://start.spring.io/starter.zip -d dependencies=web -d javaVersion=17 -o demo.zip`
+  - `unzip demo.zip`
+  - The project comes with a Gradle Wrapper, which is a prebuilt jar to execute Gradle for us. However, we'll need to download a JDK, in our case 17.
+  - `sudo apt-get install openjdk-17-jdk`
+  - `java --version`
+  - Building the project should now work with the Gradle Wrapper `./gradlew clean build`
+
+  Todo - Dockerfile next
+  
