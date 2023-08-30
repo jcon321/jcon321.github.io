@@ -4,7 +4,7 @@ title:  "VSCode Devcontainers for an MMO Emulator"
 date:   2023-08-26 13:22:32 -0400
 ---
 
-VSCode's devcontainers are a great way to isolate an entire environment through the use of Docker. I chose to utilize devcontainers to create a development environment which could build and host a complex system for a popular MMO emulator, EQEmu. [EverQuest Emulator](https://docs.eqemu.io/){:target="_blank"} is a fantastic open source reveresed engineered server implementation for EverQuest. For this case I'll be standing up a classic version of the server called [The Al`Kabor Project](https://takproject.net/){:target="_blank"} 
+VSCode's devcontainers are a great way to isolate an entire environment through the use of Docker. I chose to utilize devcontainers to create a development environment which could build and host a complex system for a popular MMO emulator, EQEmu. [EverQuest Emulator](https://docs.eqemu.io/){:target="_blank"} is a fantastic open source reveresed engineered server implementation for EverQuest. For this case I'll be standing up a classic version of the server called [The Al`Kabor Project](https://www.takproject.net/forums/index.php){:target="_blank"} 
 
 The system's architectural design comprises several autonomous `C++` processes responsible for managing global actions, along with additional dynamically initiated C++ processes, all seamlessly integrated with a backend `MySQL` database which encompasses the game engine. `Lua` scripts are used to control AI entities within the world. 
 
